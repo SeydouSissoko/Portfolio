@@ -6,10 +6,9 @@
     <title>Seydou Ibrahima Sissoko | Security Portfolio</title>
     <style>
         :root {
-            --bg: #020617; /* Deep Midnight */
+            --bg: #020617;
             --card: #1e293b;
-            --accent: #3b82f6; /* Royal Blue */
-            --accent-glow: rgba(59, 130, 246, 0.5);
+            --accent: #3b82f6;
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
             --border: #334155;
@@ -17,14 +16,13 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            font-family: 'Inter', system-ui, sans-serif; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
             background-color: var(--bg); 
             color: var(--text-main); 
             line-height: 1.6; 
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -51,15 +49,13 @@
 
         .container { max-width: 800px; margin: 120px auto 60px auto; padding: 0 20px; }
 
-        /* Header */
         header { text-align: left; margin-bottom: 60px; }
-        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; color: #fff; letter-spacing: -1px; }
         .contact-row { display: flex; gap: 15px; flex-wrap: wrap; color: var(--text-dim); font-size: 0.9rem; }
         .contact-row a { color: var(--accent); text-decoration: none; }
 
-        /* Sections */
         section { margin-bottom: 80px; }
-        h2 { font-size: 1.2rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        h2 { font-size: 1.1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-left: 3px solid var(--accent); padding-left: 15px; }
 
         .card {
             background: var(--card);
@@ -69,32 +65,30 @@
             margin-bottom: 25px;
         }
 
-        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .title { font-size: 1.25rem; font-weight: 700; color: #fff; }
-        .org { color: var(--accent); font-weight: 600; }
+        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; }
+        .title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+        .org { color: var(--accent); font-weight: 600; font-size: 1.1rem; }
         .date { color: var(--text-dim); font-size: 0.85rem; text-align: right; }
 
         ul { list-style: none; }
-        li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-dim); }
-        li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+        li { position: relative; padding-left: 20px; margin-bottom: 12px; color: var(--text-dim); }
+        li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 
-        .badge-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .badge { background: #0f172a; border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; }
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .badge { background: #0f172a; border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--text-main); }
 
-        /* Download Button - Minimalist */
-        .dl-container { text-align: center; margin-top: 40px; }
+        .dl-container { text-align: center; margin-top: 50px; }
         .btn-primary {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
+            padding: 16px 32px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 4px 14px var(--accent-glow);
             transition: 0.3s;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px var(--accent-glow); }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
         @media (max-width: 600px) { h1 { font-size: 2.5rem; } .card-top { flex-direction: column; } .date { text-align: left; margin-top: 5px; } }
     </style>
@@ -120,7 +114,7 @@
     </header>
 
     <section id="edu">
-        <h2>Education</h2>
+        <h2>Education & Honors</h2>
         <div class="card">
             <div class="card-top">
                 <div>
@@ -129,25 +123,25 @@
                 </div>
                 <div class="date">Atlanta, GA<br>Expected May 2027</div>
             </div>
-            <p><strong>GPA:</strong> 3.4/4.0 [cite: 2]</p>
-            <p><strong>Honors:</strong> 3x Dean's List [cite: 2]</p>
-            <p style="margin-top: 15px; font-size: 0.9rem;">
-                <strong>Relevant Coursework:</strong> Client Systems, Inc. Resp, Systems Admin, Software Assurance [cite: 2]
+            <p><strong>GPA:</strong> 3.4 / 4.0</p>
+            <p><strong>Awards:</strong> 3x Dean's List</p>
+            <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-main);">
+                <strong>Relevant Coursework:</strong> Client Systems, Inc. Resp, Systems Admin, Software Assurance
             </p>
         </div>
     </section>
 
     <section id="exp">
-        <h2>Experience</h2>
+        <h2>Professional Experience</h2>
         <div class="card">
             <div class="card-top">
                 <div><div class="title">Cybersecurity & Research Intern</div><div class="org">Orange Mali</div></div>
                 <div class="date">May 2025 – Aug 2025</div>
             </div>
             <ul>
-                <li>Managed access security supporting IAM operations for 100+ user accounts[cite: 2].</li>
-                <li>Reduced access related tickets by 25% through improved role accuracy[cite: 2].</li>
-                <li>Led cybersecurity awareness for 50+ locals to reduce social engineering risk[cite: 2].</li>
+                <li>Managed access security by supporting IAM operations impacting 100+ user accounts across internal systems.</li>
+                <li>Modified and deprovisioned user access, reducing access-related tickets by 25% through improved role accuracy.</li>
+                <li>Led cybersecurity awareness for 50+ locals, improving password hygiene and reducing social engineering risk.</li>
             </ul>
         </div>
 
@@ -157,38 +151,67 @@
                 <div class="date">May 2024 – July 2024</div>
             </div>
             <ul>
-                <li>Provided identity verification and access support for 50+ users[cite: 2].</li>
-                <li>Ensured compliance with security and privacy policies before granting access[cite: 2].</li>
-                <li>Improved team efficiency by 20% through incident documentation[cite: 2].</li>
+                <li>Provided identity verification and access support for 50+ users, reinforcing secure authentication and access control practices.</li>
+                <li>Verified user identities before granting access, ensuring compliance with security and privacy policies.</li>
+                <li>Documented incidents and resolutions in ticketing systems, improving team efficiency and knowledge reuse by 20%.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div><div class="title">Digital Associate</div><div class="org">Walmart</div></div>
+                <div class="date">Sep 2021 – Apr 2025</div>
+            </div>
+            <ul>
+                <li>Handled systems and transaction workflows involving sensitive customer data maintaining 100% compliance.</li>
+                <li>Supported daily by troubleshooting POS and system access issues, reducing transaction disruptions by 15-20%.</li>
             </ul>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>Technical Projects & Leadership</h2>
         <div class="card">
             <div class="card-top">
                 <div class="title">Cloud Security & Risk Assessment</div>
                 <div class="date">Dec 2025</div>
             </div>
             <ul>
-                <li>Secured AWS/Azure environments, improving compliance scores by 25%[cite: 2].</li>
-                <li>Set up IAM roles, least privilege policies, and MFA[cite: 2].</li>
-                <li>Investigated alerts using AWS CloudTrail and CloudWatch[cite: 2].</li>
+                <li>Secured a small cloud environment (AWS / Azure) by implementing identity, logging, and monitoring controls, improving simulated compliance scores by 25%.</li>
+                <li>Set up IAM roles, least privilege policies, and MFA to control access across cloud accounts.</li>
+                <li>Assessed cloud misconfigurations and access risks impacting confidentiality, integrity, and availability.</li>
+                <li>Investigated security alerts and logs using AWS CloudTrail and CloudWatch, performing root cause analysis and recommending mitigations.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div><div class="title">Active Member & Student Leader</div><div class="org">African Student Association (KSU)</div></div>
+                <div class="date">2023 – Present</div>
+            </div>
+            <ul>
+                <li>Helped organize campus events serving 100+ students while promoting security awareness and leadership.</li>
+                <li>Integrated cybersecurity and STEM awareness into student discussions and activities.</li>
+                <li>Mentored new members on club involvement and leadership, increasing participation and engagement by 20-25%.</li>
             </ul>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>Technical Skills & Languages</h2>
         <div class="card">
             <div class="badge-grid">
-                <span class="badge">IAM</span><span class="badge">RRBAC</span><span class="badge">Zero Trust</span>
-                <span class="badge">Entra ID</span><span class="badge">Azure / AWS</span><span class="badge">PAM / SSO</span>
+                <span class="badge">IAM</span><span class="badge">RRBAC</span><span class="badge">Least Privilege</span>
+                <span class="badge">MFA</span><span class="badge">Zero Trust</span><span class="badge">Entra ID</span>
+                <span class="badge">Azure / AWS</span><span class="badge">PAM / SSO</span><span class="badge">OAuth</span>
                 <span class="badge">Python / Java</span><span class="badge">Wireshark</span><span class="badge">Incident Response</span>
-                <span class="badge">Vulnerability Mgmt</span><span class="badge">PowerShell</span><span class="badge">Active Directory</span>
+                <span class="badge">Vulnerability Mgmt</span><span class="badge">Network Security</span><span class="badge">PowerShell</span>
+                <span class="badge">Active Directory</span><span class="badge">Linux / Windows</span><span class="badge">TCP/IP/DNS</span>
             </div>
-            <p style="margin-top: 25px;"><strong>Languages:</strong> English, French, Bambara, Arabic (All Proficient) [cite: 2]</p>
+            <div style="margin-top: 30px;">
+                <p><strong>Languages:</strong> English, French, Bambara, Arabic (All Proficient)</p>
+                <p style="margin-top: 5px; color: var(--text-dim);"><strong>Interests:</strong> Security Engineering, Identity & Cloud Security, Information Security</p>
+            </div>
         </div>
     </section>
 
@@ -197,8 +220,8 @@
     </div>
 </div>
 
-<footer style="text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.8rem;">
-    &copy; 2026 Seydou Ibrahima Sissoko
+<footer style="text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border);">
+    &copy; 2026 Seydou Ibrahima Sissoko | Security Portfolio
 </footer>
 
 </body>
