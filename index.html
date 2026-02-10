@@ -3,190 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seydou Ibrahima Sissoko | Security Portfolio</title>
+    <title>Seydou Ibrahima Sissoko | Security Engineering Portfolio</title>
     <style>
         :root {
-            --bg: #0d1117;
-            --card-bg: #161b22;
-            --text-main: #e6edf3;
-            --text-dim: #8b949e;
-            --accent: #58a6ff;
-            --border: #30363d;
-            --success: #238636;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: #334155;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', -apple-system, system-ui, sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            scroll-behavior: smooth;
+        }
 
-        nav { position: fixed; top: 0; width: 100%; background: rgba(13, 17, 23, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: center; padding: 12px 0; gap: 10px; flex-wrap: wrap; }
-        .nav-btn { color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 600; padding: 6px 12px; border: 1px solid var(--accent); border-radius: 6px; transition: 0.2s; }
-        .nav-btn:hover { background: var(--accent); color: var(--bg); }
-        .download-nav { background: var(--success); color: white; border-color: var(--success); }
-        .download-nav:hover { background: #2ea043; border-color: #2ea043; color: white; }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-        .container { max-width: 850px; margin: 100px auto 50px auto; padding: 0 20px; }
-        header { text-align: center; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
-        .contact-info { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 15px; }
-        
-        section { padding: 50px 0; border-bottom: 1px solid var(--border); }
-        h2 { color: var(--accent); font-size: 1.4rem; margin-bottom: 25px; text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 15px; }
+        .nav-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 8px; margin-bottom: 20px; transition: 0.3s; }
-        .card:hover { border-color: var(--accent); }
-        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; }
-        .job-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
-        .org-name { color: var(--accent); font-weight: 600; }
-        .date-loc { text-align: right; font-size: 0.85rem; color: var(--text-dim); }
+        .nav-link:hover { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+        .btn-dl { background: var(--accent); color: var(--bg); border: none; }
+        .btn-dl:hover { background: var(--accent-hover); color: var(--bg); }
+
+        .container { max-width: 900px; margin: 100px auto 60px auto; padding: 0 25px; }
+
+        /* Header */
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
+        .sub-head { color: var(--accent); font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; color: var(--text-dim); }
+        .contact-row a { color: var(--accent); text-decoration: none; }
+
+        /* Sections */
+        section { padding-top: 60px; margin-bottom: 40px; }
+        h2 { font-size: 1.8rem; margin-bottom: 30px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; }
+        .title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+        .org { color: var(--accent); font-weight: 600; font-size: 1.1rem; }
+        .date-loc { text-align: right; color: var(--text-dim); font-size: 0.9rem; }
 
         ul { list-style: none; }
-        li { position: relative; padding-left: 20px; margin-bottom: 10px; }
-        li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+        li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-dim); }
+        li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin: 15px 0; }
-        .skill-tag { background: #21262d; border: 1px solid var(--border); padding: 6px; border-radius: 4px; font-size: 0.75rem; text-align: center; }
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .badge { background: #0f172a; border: 1px solid var(--border); color: var(--text-main); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; }
 
-        .dl-section { text-align: center; background: #1c2128; border: 2px dashed var(--border); padding: 40px; border-radius: 12px; }
-        .dl-button { display: inline-block; background: var(--success); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
-        .dl-button:hover { background: #2ea043; transform: translateY(-2px); }
+        .dl-footer { text-align: center; margin-top: 40px; }
+        .big-dl { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: var(--bg); 
+            padding: 18px 35px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            transition: 0.3s;
+        }
+        .big-dl:hover { background: var(--accent-hover); transform: scale(1.05); }
 
-        @media (max-width: 600px) { .card-header { flex-direction: column; } .date-loc { text-align: left; margin-top: 8px; } h1 { font-size: 1.8rem; } }
+        @media (max-width: 600px) {
+            .card-top { flex-direction: column; }
+            .date-loc { text-align: left; margin-top: 5px; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#education" class="nav-btn">Education</a>
-    <a href="#experience" class="nav-btn">Experience</a>
-    <a href="#projects" class="nav-btn">Projects</a>
-    <a href="#skills" class="nav-btn">Skills</a>
-    <a href="#download" class="nav-btn download-nav">Download PDF</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#edu" class="nav-link">Education</a>
+    <a href="#exp" class="nav-link">Experience</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="Seydou_Ibrahima_Sissoko_Security_Engineering_Resume.pdf" download class="nav-link btn-dl">Resume PDF</a>
 </nav>
 
 <div class="container">
     <header id="about">
         <h1>Seydou Ibrahima Sissoko</h1>
-        <div class="contact-info">
-            US Citizen [cite: 2] | Atlanta, GA [cite: 2, 6] | (470) 556-0115 [cite: 2]<br>
-            Seydou.Sissoko204@gmail.com [cite: 2]
-        </div>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/seydou-sissoko-336306341/" target="_blank" style="color: var(--accent); text-decoration: none;">LinkedIn Portfolio [cite: 2]</a>
+        <div class="sub-head">Security Engineering & Identity Management</div>
+        <div class="contact-row">
+            <span>US Citizen</span>
+            <span>Atlanta, GA</span>
+            <span>(470) 556-0115</span>
+            <a href="mailto:Seydou.Sissoko204@gmail.com">Seydou.Sissoko204@gmail.com</a>
+            <a href="https://www.linkedin.com/in/seydou-sissoko-336306341/" target="_blank">LinkedIn Portfolio</a>
         </div>
     </header>
 
-    <section id="education">
-        <h2>Education & Awards</h2>
+    <section id="edu">
+        <h2>Education & Honors</h2>
         <div class="card">
-            <div class="card-header">
+            <div class="card-top">
                 <div>
-                    <div class="job-title">B.S. in Cybersecurity [cite: 5]</div>
-                    <div class="org-name">Kennesaw State University [cite: 4]</div>
+                    <div class="org">Kennesaw State University</div>
+                    <div class="title">B.S. in Cybersecurity</div>
                 </div>
-                <div class="date-loc">Atlanta, GA [cite: 6]<br>Expected May 2027 [cite: 7]</div>
+                <div class="date-loc">Atlanta, GA<br>Expected May 2027</div>
             </div>
-            <p><strong>GPA:</strong> 3.4/4.0 [cite: 8]</p>
-            <p><strong>Awards:</strong> 3x Dean's List </p>
-            <p style="margin-top: 10px; font-size: 0.9rem; border-top: 1px solid var(--border); padding-top: 10px;">
-                <strong>Relevant Coursework:</strong> Client Systems, Inc. Resp, Systems Admin, Software Assurance 
-            </p>
+            <p style="color: var(--accent); font-weight: 600; font-size: 1.1rem;">GPA: 3.4/4.0</p>
+            <p style="margin: 10px 0;"><strong>Awards:</strong> 3x Dean's List Member</p>
+            <div style="border-top: 1px solid var(--border); padding-top: 15px; margin-top: 15px;">
+                <p><strong>Relevant Course Work:</strong></p>
+                <p class="date-loc" style="text-align: left; color: var(--text-main);">Client Systems, Inc. Resp, Systems Admin, Software Assurance</p>
+            </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="exp">
         <h2>Work Experience</h2>
         
         <div class="card">
-            <div class="card-header">
-                <div><div class="job-title">Cybersecurity & Research Intern [cite: 12]</div><div class="org-name">Orange Mali [cite: 11]</div></div>
-                <div class="date-loc">Bamako, Mali [cite: 13]<br>May 2025 - Aug 2025 [cite: 14]</div>
+            <div class="card-top">
+                <div>
+                    <div class="title">Cybersecurity & Research Intern</div>
+                    <div class="org">Orange Mali</div>
+                </div>
+                <div class="date-loc">Bamako, Mali<br>May 2025 – Aug 2025</div>
             </div>
             <ul>
-                <li>Managed access security by supporting IAM operations impacting 100+ user accounts across internal systems[cite: 15].</li>
-                <li>Modified and deprovisioned user access, reducing access related tickets by 25% through improved role accuracy[cite: 16].</li>
-                <li>Led cybersecurity awareness for 50+ locals, improving password hygiene and reducing social engineering risk[cite: 17].</li>
+                <li>Managed access security by supporting IAM operations impacting 100+ user accounts across internal systems.</li>
+                <li>Modified and deprovisioned user access, reducing access related tickets by 25% through improved role accuracy.</li>
+                <li>Led cybersecurity awareness training for 50+ locals, improving password hygiene and reducing social engineering risk.</li>
             </ul>
         </div>
 
         <div class="card">
-            <div class="card-header">
-                <div><div class="job-title">Helpdesk & Camp Counselor [cite: 19]</div><div class="org-name">Cobb County Parks [cite: 18]</div></div>
-                <div class="date-loc">Atlanta, GA [cite: 21]<br>May 2024 - July 2024 [cite: 22]</div>
+            <div class="card-top">
+                <div>
+                    <div class="title">Helpdesk & Camp Counselor</div>
+                    <div class="org">Cobb County Parks</div>
+                </div>
+                <div class="date-loc">Atlanta, GA<br>May 2024 – July 2024</div>
             </div>
             <ul>
-                <li>Provided identity verification and access support for 50+ users[cite: 23].</li>
-                <li>Verified user identities before granting access to ensure compliance with security and privacy policies[cite: 24].</li>
-                <li>Documented incidents and resolutions in ticketing systems, improving team efficiency by 20%[cite: 25].</li>
+                <li>Provided identity verification and access support for 50+ users, reinforcing secure authentication and access control practices.</li>
+                <li>Verified user identities before granting access, ensuring compliance with security and privacy policies.</li>
+                <li>Documented incidents and resolutions in ticketing systems, improving team efficiency and knowledge reuse by 20%.</li>
             </ul>
         </div>
 
         <div class="card">
-            <div class="card-header">
-                <div><div class="job-title">Digital Associate [cite: 27]</div><div class="org-name">Walmart [cite: 26]</div></div>
-                <div class="date-loc">Atlanta, GA [cite: 28]<br>Sep 2021 - Apr 2025 [cite: 29]</div>
+            <div class="card-top">
+                <div>
+                    <div class="title">Digital Associate</div>
+                    <div class="org">Walmart</div>
+                </div>
+                <div class="date-loc">Atlanta, GA<br>Sep 2021 – Apr 2025</div>
             </div>
             <ul>
-                <li>Handled transaction workflows involving sensitive customer data with 100% compliance[cite: 30].</li>
-                <li>Troubleshot POS and system access issues, reducing disruptions by 15-20%[cite: 31].</li>
+                <li>Handled systems and transaction workflows involving sensitive customer data maintaining 100% compliance.</li>
+                <li>Supported daily by troubleshooting POS and system access issues, reducing transaction disruptions by 15-20%.</li>
             </ul>
         </div>
     </section>
 
     <section id="projects">
         <h2>Projects & Leadership</h2>
+        
         <div class="card">
-            <div class="card-header">
-                <div class="job-title">Cloud Security & Risk Assessment [cite: 38]</div>
-                <div class="date-loc">Dec 2025 [cite: 37]</div>
+            <div class="card-top">
+                <div class="title">Cloud Security & Risk Assessment</div>
+                <div class="date-loc">Dec 2025</div>
             </div>
             <ul>
-                <li>Secured a cloud environment (AWS / Azure) by implementing identity and logging controls[cite: 40].</li>
-                <li>Improved simulated compliance scores by 25%[cite: 40].</li>
-                <li>Set up IAM roles, least privilege policies, and MFA[cite: 41].</li>
-                <li>Investigated security alerts using AWS CloudTrail and CloudWatch[cite: 43].</li>
+                <li>Secured a small cloud environment (AWS / Azure) by implementing identity, logging, and monitoring controls, improving simulated compliance scores by 25%.</li>
+                <li>Set up IAM roles, least privilege policies, and MFA to control access across cloud accounts.</li>
+                <li>Assessed cloud misconfigurations and access risks impacting confidentiality, integrity, and availability.</li>
+                <li>Investigated security alerts and logs using AWS CloudTrail and CloudWatch, performing root cause analysis and recommending mitigations.</li>
             </ul>
         </div>
+
         <div class="card">
-            <div class="card-header">
-                <div class="job-title">Student Leader [cite: 33]</div>
-                <div class="org-name">African Student Association (KSU) [cite: 33]</div>
-                <div class="date-loc">2023 - Present [cite: 34]</div>
+            <div class="card-top">
+                <div>
+                    <div class="title">Active Member & Student Leader</div>
+                    <div class="org">African Student Association (KSU)</div>
+                </div>
+                <div class="date-loc">2023 – Present</div>
             </div>
             <ul>
-                <li>Organized campus events for 100+ students promoting security awareness[cite: 35].</li>
-                <li>Mentored new members, increasing engagement by 20-25%[cite: 37].</li>
+                <li>Helped organize campus events serving 100+ students while promoting security awareness and leadership.</li>
+                <li>Integrated cybersecurity and STEM awareness into student discussions and activities.</li>
+                <li>Mentored new members on club involvement and leadership, increasing participation and engagement by 20-25%.</li>
             </ul>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical Skills & Languages</h2>
+        <h2>Skills & Expertise</h2>
         <div class="card">
-            <p><strong>Computer Skills:</strong> [cite: 46]</p>
-            <div class="skills-grid">
-                <div class="skill-tag">IAM / RRBAC</div><div class="skill-tag">Zero Trust</div><div class="skill-tag">Entra ID</div>
-                <div class="skill-tag">Azure / AWS</div><div class="skill-tag">PAM / SSO</div><div class="skill-tag">Python / Java</div>
-                <div class="skill-tag">Wireshark</div><div class="skill-tag">Incident Response</div><div class="skill-tag">Risk Assessment</div>
-                <div class="skill-tag">Active Directory</div><div class="skill-tag">PowerShell</div><div class="skill-tag">Vulnerability Mgmt</div>
+            <p style="margin-bottom: 15px; font-weight: bold;">Computer & Security Skills:</p>
+            <div class="badge-grid">
+                <span class="badge">IAM</span><span class="badge">RRBAC</span><span class="badge">Least Privilege</span>
+                <span class="badge">MFA</span><span class="badge">Zero Trust</span><span class="badge">Entra ID</span>
+                <span class="badge">Azure</span><span class="badge">PAM</span><span class="badge">SSO</span>
+                <span class="badge">OAuth</span><span class="badge">Python</span><span class="badge">Java</span>
+                <span class="badge">Wireshark</span><span class="badge">Incident Response</span><span class="badge">AWS Security</span>
+                <span class="badge">Risk Assessment</span><span class="badge">Vulnerability Mgmt</span><span class="badge">Network Security</span>
+                <span class="badge">Scripting</span><span class="badge">Automation</span><span class="badge">Logging</span>
+                <span class="badge">Active Directory</span><span class="badge">Linux / Windows</span><span class="badge">TCP/IP/DNS</span>
+                <span class="badge">PowerShell</span><span class="badge">Problem Solving</span><span class="badge">Teamwork</span>
             </div>
-            <p style="margin-top: 20px;"><strong>Languages:</strong> English, French, Bambara, Arabic (All Proficient) </p>
-            <p><strong>Interests:</strong> Security Engineering, Identity & Cloud Security, Information Security </p>
+
+            <div style="margin-top: 30px;">
+                <p><strong>Language Skills:</strong> English, French, Bambara, Arabic (All Proficient)</p>
+                <p style="margin-top: 5px;"><strong>Interests:</strong> Security Engineering, Identity & Cloud Security, Information Security</p>
+            </div>
         </div>
     </section>
 
-    <section id="download">
-        <h2>Official Resume</h2>
-        <div class="dl-section">
-            <p style="margin-bottom: 20px; color: var(--text-dim);">Need a physical copy for your records?</p>
-            <a href="Seydou_Ibrahima_Sissoko_Security_Engineering_Resume.pdf" download class="dl-button">
-                📄 Download PDF Resume
-            </a>
-        </div>
-    </section>
+    <div class="dl-footer">
+        <a href="Seydou_Ibrahima_Sissoko_Security_Engineering_Resume.pdf" download class="big-dl">Download Full Resume PDF</a>
+    </div>
 </div>
 
-<footer style="text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem;">
-    &copy; 2026 Seydou Ibrahima Sissoko. Professional Portfolio.
+<footer style="text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.8rem;">
+    &copy; 2026 Seydou Ibrahima Sissoko | Security Portfolio
 </footer>
 
 </body>
